@@ -7,62 +7,60 @@ output reg [3:0] zeros, ones, zeros_temp;
 output reg [7:0] t_output;
 
 initial begin
-	zeros <= 4'b0000;
-	ones <= 4'b1111;
-	zeros_temp <= 4'b0000;
+  zeros <= 4'b0000;
+  ones <= 4'b1111;
+  zeros_temp <= 4'b0000;
 
 end
 
 always @(posedge clock) begin
-	if (switch != prev_switch) begin // detects if there is a change with the switch value
-									 // if there is a change, the it resets to default values
-		zeros <= 4'b0000;
-		ones <= 4'b1111;
-		zeros_temp <= 4'b0000;
-
-	end
-	prev_switch <= switch;
-	if (switch == 3'b000) t_output <= 0;
-	else if (switch == 3'b001) begin
-		t_output <= {zeros, zeros_temp};
-		zeros_temp <= {one, zeros_temp[3:1]};
-		if (zeros_temp == 4'b1111) begin
-			t_output <= {zeros, zeros_temp};
-			zeros_temp <= 0;
-		end
-	end else if (switch == 3'b010) begin
-		t_output <= {zeros_temp, zeros};
-		zeros_temp <= {zeros_temp[2:0], one};
-		if (zeros_temp == 4'b1111) begin
-			t_output <= {zeros_temp, zeros};
-			zeros_temp <= 0;
-		end
-	end else if (switch == 3'b011 || switch == 3'b111) begin
-		t_output <= {zeros, zeros_temp};
-		zeros_temp <= {one, zeros_temp[3:1]};
-		zeros <= {zeros[2:0], one};
-		if (zeros_temp == 4'b1111) begin
-			t_output <= {zeros_temp, zeros};
-			zeros_temp <= 0;
-			zeros <= 0;
-		end
-	end else if (switch == 3'b100) begin
-		t_output <= 8'b11111111;
-	end else if (switch == 3'b101) begin
-		t_output <= {ones, zeros_temp};
-		zeros_temp <= {one, zeros_temp[3:1]};
-		if (zeros_temp == 4'b1111) begin
-			t_output <= {ones, zeros_temp};
-			zeros_temp <= 0;
-		end
-	end else if (switch == 3'b110) begin
-		t_output <= {zeros_temp, ones};
-		zeros_temp <= {zeros_temp[2:0], one};
-		if (zeros_temp == 4'b1111) begin
-			t_output <= {zeros_temp, ones};
-			zeros_temp <= 0;
-		end
-	end 
+  if (switch != prev_switch) begin // detects if there is a change with the switch value
+                   // if there is a change, the it resets to default values
+    zeros <= 4'b0000;
+    zeros_temp <= 4'b0000;
+  end
+  prev_switch <= switch;
+  if (switch == 3'b000) t_output <= 0;
+  else if (switch == 3'b001) begin
+    t_output <= {zeros, zeros_temp};
+    zeros_temp <= {one, zeros_temp[3:1]};
+    if (zeros_temp == 4'b1111) begin
+      t_output <= {zeros, zeros_temp};
+      zeros_temp <= 0;
+    end
+  end else if (switch == 3'b010) begin
+    t_output <= {zeros_temp, zeros};
+    zeros_temp <= {zeros_temp[2:0], one};
+    if (zeros_temp == 4'b1111) begin
+      t_output <= {zeros_temp, zeros};
+      zeros_temp <= 0;
+    end
+  end else if (switch == 3'b011 || switch == 3'b111) begin
+    t_output <= {zeros, zeros_temp};
+    zeros_temp <= {one, zeros_temp[3:1]};
+    zeros <= {zeros[2:0], one};
+    if (zeros_temp == 4'b1111) begin
+      t_output <= {zeros_temp, zeros};
+      zeros_temp <= 0;
+      zeros <= 0;
+    end
+  end else if (switch == 3'b100) begin
+    t_output <= 8'b11111111;
+  end else if (switch == 3'b101) begin
+    t_output <= {ones, zeros_temp};
+    zeros_temp <= {one, zeros_temp[3:1]};
+    if (zeros_temp == 4'b1111) begin
+      t_output <= {ones, zeros_temp};
+      zeros_temp <= 0;
+    end
+  end else if (switch == 3'b110) begin
+    t_output <= {zeros_temp, ones};
+    zeros_temp <= {zeros_temp[2:0], one};
+    if (zeros_temp == 4'b1111) begin
+      t_output <= {zeros_temp, ones};
+      zeros_temp <= 0;
+    end
+  end 
 end
 
 endmodule
@@ -83,7 +81,7 @@ always #10 clock = ~clock;
 always #200 switch = switch + 1;
 
 initial begin
-	one = 1; zero = 0; clock = 0; switch = 0;
+  #0 one = 1; #0 zero = 0; clock = 0; switch = 0; #2000 $stop; // stop the simulation
 end
 
 endmodule
