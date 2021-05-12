@@ -1,0 +1,15 @@
+|majority
+Out1 <= Out1~4.DB_MAX_OUTPUT_PORT_TYPE
+Out2 <= Out2~6.DB_MAX_OUTPUT_PORT_TYPE
+A => Out1~1.IN0
+A => Out1~0.IN0
+B => Out1~3.IN0
+B => Out1~0.IN1
+C => Out2~0.IN1
+C => Out1~3.IN1
+C => Out1~1.IN1
+D => Out2~5.IN1
+D => Out2~3.IN1
+D => Out2~1.IN1
+
+

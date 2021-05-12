@@ -1,0 +1,8 @@
+|house_alarm
+A <= A~2.DB_MAX_OUTPUT_PORT_TYPE
+E => A~1.IN0
+E => A~0.IN1
+D => A~0.IN0
+W => A~1.IN1
+
+

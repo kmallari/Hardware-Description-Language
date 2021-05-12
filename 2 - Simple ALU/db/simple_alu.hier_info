@@ -1,0 +1,38 @@
+|simple_alu
+andOutput[0] <= andOutput~0.DB_MAX_OUTPUT_PORT_TYPE
+andOutput[1] <= andOutput~1.DB_MAX_OUTPUT_PORT_TYPE
+andOutput[2] <= <GND>
+orOutput[0] <= orOutput~0.DB_MAX_OUTPUT_PORT_TYPE
+orOutput[1] <= orOutput~1.DB_MAX_OUTPUT_PORT_TYPE
+orOutput[2] <= <GND>
+addOutput[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+addOutput[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+addOutput[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+mulOutput[0] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+mulOutput[1] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+mulOutput[2] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+divOutput[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+divOutput[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+divOutput[2] <= <GND>
+A[0] => Div0.IN1
+A[0] => Mult0.IN1
+A[0] => Add0.IN2
+A[0] => orOutput~0.IN0
+A[0] => andOutput~0.IN0
+A[1] => Div0.IN0
+A[1] => Mult0.IN0
+A[1] => Add0.IN1
+A[1] => orOutput~1.IN0
+A[1] => andOutput~1.IN0
+B[0] => Div0.IN3
+B[0] => Mult0.IN3
+B[0] => Add0.IN4
+B[0] => orOutput~0.IN1
+B[0] => andOutput~0.IN1
+B[1] => Div0.IN2
+B[1] => Mult0.IN2
+B[1] => Add0.IN3
+B[1] => orOutput~1.IN1
+B[1] => andOutput~1.IN1
+
+

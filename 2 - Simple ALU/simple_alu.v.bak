@@ -1,0 +1,13 @@
+module simple_alu(andOutput, orOutput, addOutput, mulOutput, divOutput, A, B);
+
+input[1:0] A; // first input
+input[1:0] B; // second input
+output[2:0] andOutput, orOutput, addOutput, mulOutput, divOutput; // answer to the operation
+
+assign andOutput = A & B; // AND
+assign orOutput = A | B; // OR
+assign addOutput = A + B; // addition
+assign mulOutput = A * B; // multiplication
+assign divOutput = A / B; // division
+	
+endmodule 

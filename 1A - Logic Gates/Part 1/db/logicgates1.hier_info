@@ -1,0 +1,15 @@
+|logicgates1
+notOutput <= A.DB_MAX_OUTPUT_PORT_TYPE
+andOutput <= andOutput~0.DB_MAX_OUTPUT_PORT_TYPE
+orOutput <= orOutput~0.DB_MAX_OUTPUT_PORT_TYPE
+norOutput <= orOutput~0.DB_MAX_OUTPUT_PORT_TYPE
+xorOutput <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+A => comb~0.IN0
+A => orOutput~0.IN0
+A => andOutput~0.IN0
+A => notOutput.DATAIN
+B => comb~0.IN1
+B => orOutput~0.IN1
+B => andOutput~0.IN1
+
+

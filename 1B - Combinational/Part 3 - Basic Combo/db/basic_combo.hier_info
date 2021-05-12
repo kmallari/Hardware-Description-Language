@@ -1,0 +1,10 @@
+|basic_combo
+f <= f~4.DB_MAX_OUTPUT_PORT_TYPE
+W => f~3.IN0
+X => f~1.IN0
+X => f~0.IN0
+Y => f~3.IN1
+Z => f~1.IN1
+Z => f~0.IN1
+
+

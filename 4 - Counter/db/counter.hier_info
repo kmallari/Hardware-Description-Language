@@ -1,0 +1,15 @@
+|counter
+clock => q[2]~reg0.CLK
+clock => q[1]~reg0.CLK
+clock => q[0]~reg0.CLK
+reset => q~5.OUTPUTSELECT
+reset => q~4.OUTPUTSELECT
+reset => q~3.OUTPUTSELECT
+direction => q~2.OUTPUTSELECT
+direction => q~1.OUTPUTSELECT
+direction => q~0.OUTPUTSELECT
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

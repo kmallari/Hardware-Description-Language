@@ -1,0 +1,37 @@
+|shift_register_74194
+d => qr~0.DATAB
+d => ql~3.DATAB
+clk => ql[3]~reg0.CLK
+clk => ql[2]~reg0.CLK
+clk => ql[1]~reg0.CLK
+clk => ql[0]~reg0.CLK
+clk => qr[3]~reg0.CLK
+clk => qr[2]~reg0.CLK
+clk => qr[1]~reg0.CLK
+clk => qr[0]~reg0.CLK
+en => qr~3.OUTPUTSELECT
+en => qr~2.OUTPUTSELECT
+en => qr~1.OUTPUTSELECT
+en => qr~0.OUTPUTSELECT
+en => ql~3.OUTPUTSELECT
+en => ql~2.OUTPUTSELECT
+en => ql~1.OUTPUTSELECT
+en => ql~0.OUTPUTSELECT
+rst => qr~4.OUTPUTSELECT
+rst => qr~5.OUTPUTSELECT
+rst => qr~6.OUTPUTSELECT
+rst => qr~7.OUTPUTSELECT
+rst => ql~7.OUTPUTSELECT
+rst => ql~6.OUTPUTSELECT
+rst => ql~5.OUTPUTSELECT
+rst => ql~4.OUTPUTSELECT
+ql[0] <= ql[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ql[1] <= ql[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ql[2] <= ql[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ql[3] <= ql[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qr[0] <= qr[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qr[1] <= qr[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qr[2] <= qr[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qr[3] <= qr[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

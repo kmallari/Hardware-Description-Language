@@ -1,0 +1,16 @@
+module logicgates2(Out1, A, B, C); 
+
+// Code for a. NOT
+
+input A, B, C;
+output Out1;
+/* wire U1, U2, U3;
+
+not(U3, B);
+and(U1, A, U3);
+and(U2, B, C);
+or(Out1, U1, U2); */
+
+assign Out1 = (A & ~B) | (B & C);
+
+endmodule

@@ -1,0 +1,38 @@
+module logicgates1(notOutput, notInput, andOutput, andInput1, andInput2, orOutput, orInput1, orInput2, norOutput, norInput1, norInput2, xorOutput, xorInput1, xorInput2); 
+
+// Code for a. NOT
+
+input notInput;
+output notOutput;
+
+not(notOutput, notInput);
+
+// Code for b. 2-input AND
+
+input andInput1, andInput2;
+output andOutput;
+
+and(andOutput, andInput1, andInput2);
+
+// Code for c. 2-input OR
+
+input orInput1, orInput2;
+output orOutput;
+
+or(orOutput, orInput1, orInput2);
+
+// Code for d. 2-input NOR
+
+input norInput1, norInput2;
+output norOutput;
+
+nor(norOutput, norInput1, norInput2);
+
+// Code for e. 2-input XOR
+
+input xorInput1, xorInput2;
+output xorOutput;
+
+xor(xorOutput, xorInput1, xorInput2);
+
+endmodule 
