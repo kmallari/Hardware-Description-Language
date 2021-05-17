@@ -1,0 +1,23 @@
+|washing_machine
+coin => Selector0.IN8
+coin => Selector1.IN8
+coin => always1~0.IN0
+coin => Selector3.IN1
+coin => Selector0.IN1
+coin => state~3.OUTPUTSELECT
+coin => state~2.OUTPUTSELECT
+coin => state~1.OUTPUTSELECT
+coin => state~0.OUTPUTSELECT
+timer => always1~0.IN1
+lid => ~NO_FANOUT~
+double_wash => always1~1.IN1
+double_wash => always1~2.IN1
+soak <= always1~3.DB_MAX_OUTPUT_PORT_TYPE
+wash1 <= always1~5.DB_MAX_OUTPUT_PORT_TYPE
+rinse1 <= always1~7.DB_MAX_OUTPUT_PORT_TYPE
+wash2 <= always1~9.DB_MAX_OUTPUT_PORT_TYPE
+rinse2 <= always1~11.DB_MAX_OUTPUT_PORT_TYPE
+spin <= always1~13.DB_MAX_OUTPUT_PORT_TYPE
+stop <= always1~15.DB_MAX_OUTPUT_PORT_TYPE
+
+

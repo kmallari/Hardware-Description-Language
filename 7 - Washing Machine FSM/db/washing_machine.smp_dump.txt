@@ -1,0 +1,7 @@
+
+State Machine - |washing_machine|state
+Name state.L3 state.L2 state.L1 state.L0 
+state.L0 0 0 0 0 
+state.L1 0 0 1 1 
+state.L2 0 1 0 1 
+state.L3 1 0 0 1 
