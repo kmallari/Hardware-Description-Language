@@ -1,0 +1,9 @@
+Basketball Scoring, timer & 24-shot clock System 
+
+Use PB0 as master reset switch. 
+
+Use Score1 for the score of the 1st team (assume 0 to 255 score only).  Use Score2 for the score of the 2nd team.  Use PB1 & PB2 as up-down buttons for the 1st team and PB3 & PB4 as up-down buttons for the 2nd team.
+
+Display minutes:seconds (mm:ss) using the corresponding variables i.e. minutes for minutes and seconds for seconds .  SW1 = on, resets the timer to 12:00.  SW2 = on, counts down the displayed time.  SW2 = off, pauses timer count down.
+
+Use sec.sec10th to display remaining shot clock.   SW3 = on, resets the timer to 24.0 seconds. SW1 = on, also resets the timer to 24.0 seconds. SW4 = on, counts down the shot clock. SW4 = off, pauses the shot clock.

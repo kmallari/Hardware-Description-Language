@@ -1,0 +1,35 @@
+module clk_gen (
+  input wire clk_5k,
+  input wire reset,
+  output reg clk_1sec,
+  output reg clk_1msec
+  );
+
+  reg [2:0] counter_cycles;  // counts from 0 to 4 cycles => 1ms
+  reg [9:0] counter_msecs;   // counts from 0 to 999 msecons => 1s
+
+  always @(posedge clk_5k or negedge reset) begin
+    if (~reset) begin
+      clk_1sec <= 1'b0;
+      clk_1msec <= 1'b0;
+      counter_cycles <= 3'd0;
+      counter_msecs <= 10'd0;
+    end
+    else begin
+      if (counter_cycles == 3'd4) begin
+        counter_cycles <= 3'd0;
+        clk_1msec <= ~clk_1msec;
+        if (counter_msecs == 10'd999) begin
+          counter_msecs <= 10'd0;
+          clk_1sec <= ~clk_1sec;
+        end
+        else begin
+          counter_msecs <= counter_msecs + 10'd1;
+        end
+      end
+      else begin
+        counter_cycles <= counter_cycles + 3'd1;
+      end
+    end
+  end
+endmodule
