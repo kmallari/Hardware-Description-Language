@@ -1,0 +1,8 @@
+
+State Machine - |parking_system|current_state
+Name current_state.RIGHT_PASS current_state.WRONG_PASS current_state.WAIT_PASSWORD current_state.IDLE current_state.PARKED 
+current_state.IDLE 0 0 0 0 0 
+current_state.WAIT_PASSWORD 0 0 1 1 0 
+current_state.WRONG_PASS 0 1 0 1 0 
+current_state.RIGHT_PASS 1 0 0 1 0 
+current_state.PARKED 0 0 0 1 1 

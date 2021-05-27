@@ -14,7 +14,7 @@ module basketball_system(
     output reg [5:0] seconds; // = d59
     output reg [3:0] minutes; // = d12
     output reg [4:0] shotclock; // = d24 
-
+    
     input SW1; // resets general timer to 12 mins if on
                // also resets shot clock to 24 secs
     input SW2; // if on, counts down time. if off, pauses timer
