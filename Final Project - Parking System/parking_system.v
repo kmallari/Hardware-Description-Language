@@ -110,7 +110,7 @@ module tb_parking_system;
                     .password_1(password_1), 
                     .password_2(password_2), 
                     .GREEN_LED(GREEN_LED), 
-                    .RED_LED(RED_LED), 
+                    .RED_LED(RED_LED) 
                     );
     initial begin
         clk = 0;
@@ -135,6 +135,8 @@ module tb_parking_system;
 
         #2000;
         sensor_exit =1;
+
+        #2100 $stop;
     end
 
 endmodule
